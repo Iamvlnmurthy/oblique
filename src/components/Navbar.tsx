@@ -36,7 +36,7 @@ const Navbar = ({ onMenuToggle, isMenuOpen }: { onMenuToggle: () => void, isMenu
                 <div className="flex items-center gap-4">
                     <Magnetic>
                         <div className="flex items-center gap-3 lg:gap-4 group cursor-pointer">
-                            <img src={logo} alt="Oblique Media" className="h-10 lg:h-16 w-auto object-contain" />
+                            <img src={logo} alt="Oblique Media" className="h-[52px] lg:h-[83px] w-auto object-contain" />
                             <span className="text-[10px] opacity-40 font-mono mt-1 hidden lg:block">©2026</span>
                         </div>
                     </Magnetic>
