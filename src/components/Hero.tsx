@@ -1,33 +1,8 @@
 import React, { useRef, useEffect } from 'react'
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion'
+import { motion, useScroll, useTransform } from 'framer-motion'
 import Marquee from './Marquee'
-import Showcase3D from './Showcase3D'
 import gsap from 'gsap'
 import Magnetic from './Magnetic'
-
-const FloatingBadge = ({ children, className, delay = 0 }: { children: React.ReactNode, className?: string, delay?: number }) => {
-    return (
-        <motion.div
-            initial={{ opacity: 0, scale: 0.8, y: 20 }}
-            whileInView={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{
-                type: "spring",
-                stiffness: 100,
-                damping: 20,
-                delay
-            }}
-            whileHover={{
-                scale: 1.1,
-                y: -10,
-                transition: { type: "spring", stiffness: 400, damping: 10 }
-            }}
-            className={`glass px-6 py-4 rounded-2xl flex items-center justify-center pointer-events-auto cursor-pointer shadow-xl backdrop-blur-2xl border border-white/10 group ${className}`}
-        >
-            {children}
-            <div className="absolute inset-0 bg-brand-orange/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl" />
-        </motion.div>
-    )
-}
 
 const Hero = () => {
     const containerRef = useRef<HTMLDivElement>(null)
@@ -91,7 +66,7 @@ const Hero = () => {
                     </p>
                 </div>
 
-                <div className="hero-line flex flex-col sm:flex-row gap-8 mt-4">
+                <div className="hero-line flex flex-col sm:flex-row gap-8 mt-12">
                     <Magnetic>
                         <motion.button
                             whileHover={{ scale: 1.05 }}
@@ -110,62 +85,6 @@ const Hero = () => {
                             Start a Project
                         </motion.button>
                     </Magnetic>
-                </div>
-
-                {/* 3D Showcase Container */}
-                <div className="relative mt-16 lg:mt-24 w-full max-w-7xl group h-[400px] sm:h-[600px] lg:h-[850px]">
-                    <div className="absolute inset-0 z-0">
-                        <Showcase3D />
-                    </div>
-
-                    {/* Interactive Floating UI elements */}
-                    <div className="absolute inset-0 z-20 pointer-events-none h-full scale-[0.8] lg:scale-100">
-                        {/* Top Right: Status */}
-                        <div className="absolute top-0 lg:top-20 right-0 lg:-right-10 pointer-events-auto origin-right">
-                            <FloatingBadge delay={0.8} className="scale-90 lg:scale-100">
-                                <div className="flex flex-col items-end">
-                                    <span className="text-[10px] text-brand-orange font-bold tracking-widest uppercase mb-1">Live Results</span>
-                                    <span className="text-xl lg:text-2xl font-heading font-bold">4.8x ROAS</span>
-                                </div>
-                            </FloatingBadge>
-                        </div>
-
-                        {/* Middle Left: Interaction */}
-                        <div className="absolute top-[35%] lg:top-[45%] -translate-y-1/2 -left-4 lg:-left-20 pointer-events-auto origin-left">
-                            <FloatingBadge delay={1} className="scale-90 lg:scale-100">
-                                <div className="flex items-center gap-4">
-                                    <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-brand-orange/20 flex items-center justify-center">
-                                        <div className="w-2 h-2 lg:w-3 lg:h-3 rounded-full bg-brand-orange animate-ping" />
-                                    </div>
-                                    <div className="flex flex-col items-start text-left">
-                                        <span className="text-[10px] lg:text-xs font-bold">INTERACTIVE 3D</span>
-                                        <span className="text-[8px] lg:text-[10px] opacity-40 uppercase">Drag to explore</span>
-                                    </div>
-                                </div>
-                            </FloatingBadge>
-                        </div>
-
-                        {/* Bottom Center: Awards */}
-                        <div className="absolute bottom-5 lg:bottom-10 left-1/2 -translate-x-1/2 pointer-events-auto">
-                            <FloatingBadge delay={1.2} className="scale-75 lg:scale-100 whitespace-nowrap">
-                                <div className="flex items-center gap-4 lg:gap-6 px-2 lg:px-4">
-                                    <div className="flex flex-col items-center">
-                                        <span className="text-base lg:text-xl font-bold">20M+</span>
-                                        <span className="text-[8px] opacity-40 uppercase tracking-widest">Impressions</span>
-                                    </div>
-                                    <div className="w-px h-6 lg:h-8 bg-white/10" />
-                                    <div className="flex flex-col items-center">
-                                        <span className="text-base lg:text-xl font-bold">150%</span>
-                                        <span className="text-[8px] opacity-40 uppercase tracking-widest">Growth</span>
-                                    </div>
-                                </div>
-                            </FloatingBadge>
-                        </div>
-                    </div>
-
-                    {/* Gradient Overlays for integration */}
-                    <div className="absolute inset-x-0 -bottom-1 h-40 bg-gradient-to-t from-brand-black to-transparent z-10 pointer-events-none" />
-                    <div className="absolute inset-x-0 -top-1 h-32 bg-gradient-to-b from-brand-black to-transparent z-10 pointer-events-none" />
                 </div>
             </motion.div>
 
