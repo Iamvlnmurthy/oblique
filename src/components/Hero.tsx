@@ -84,7 +84,7 @@ const Hero = () => {
         <section
             onMouseMove={handleMouseMove}
             ref={containerRef}
-            className="relative min-h-[140vh] pt-40 pb-0 overflow-hidden flex flex-col items-center bg-brand-black"
+            className="relative min-h-[140vh] pt-24 sm:pt-40 pb-0 overflow-hidden flex flex-col items-center bg-brand-black"
         >
             {/* Background Atmosphere */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[100vw] h-[100vh] bg-[radial-gradient(circle_at_center,_rgba(249,79,55,0.08)_0%,_transparent_70%)] pointer-events-none" />
@@ -102,11 +102,11 @@ const Hero = () => {
             </div>
 
             {/* Top Kinetic Marquees Duo (Mission Narrative) */}
-            <div className="absolute top-24 left-0 w-full opacity-30 pointer-events-none z-0 flex flex-col items-center">
-                <Marquee speed={30} className="text-brand-orange text-5xl lg:text-9xl font-heading font-black uppercase tracking-tightest">
+            <div className="absolute top-20 sm:top-24 left-0 w-full opacity-30 pointer-events-none z-0 flex flex-col items-center">
+                <Marquee speed={30} className="text-brand-orange text-3xl sm:text-5xl lg:text-9xl font-heading font-black uppercase tracking-tightest">
                     WE HELP BRANDS GROW WITH CLARITY, CREATIVITY, AND MEASURABLE GROWTH —
                 </Marquee>
-                <Marquee speed={40} direction="right" className="text-white text-5xl lg:text-9xl font-heading font-black uppercase tracking-tightest">
+                <Marquee speed={40} direction="right" className="text-white text-3xl sm:text-5xl lg:text-9xl font-heading font-black uppercase tracking-tightest">
                     TRANSFORMING DIGITAL PRESENCE THROUGH MOTION AND STRATEGY —
                 </Marquee>
             </div>
@@ -124,19 +124,19 @@ const Hero = () => {
 
             <motion.div
                 style={{ y, opacity: opacityTransform, scale }}
-                className="container mx-auto px-6 relative z-30 flex flex-col items-center text-center mt-4"
+                className="container mx-auto px-6 relative z-30 flex flex-col items-center text-center mt-2 sm:mt-4"
             >
                 {/* Agency Identity Label */}
                 <motion.span
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.5 }}
-                    className="text-brand-orange text-[10px] sm:text-xs font-bold uppercase tracking-[0.5em] mb-8 hero-line bg-brand-black/50 backdrop-blur-sm px-6 py-2 rounded-full border border-brand-orange/20"
+                    className="text-brand-orange text-[10px] sm:text-xs font-bold uppercase tracking-[0.5em] mb-4 sm:mb-8 hero-line bg-brand-black/50 backdrop-blur-sm px-6 py-2 rounded-full border border-brand-orange/20"
                 >
                     Digital Marketing Agency + Creative Storytelling
                 </motion.span>
 
-                <h1 className="hero-line text-[clamp(2.5rem,10vw,8.5rem)] font-heading font-bold leading-[0.85] tracking-tightest mb-12">
+                <h1 className="hero-line text-[clamp(2.5rem,10vw,8.5rem)] font-heading font-bold leading-[0.85] tracking-tightest mb-8 sm:mb-12">
                     Out-think the <br />
                     <span className="text-brand-orange">Algorithm.</span>
                 </h1>
@@ -149,14 +149,14 @@ const Hero = () => {
                     {/* HUD Box Glow */}
                     <div className="absolute inset-0 bg-brand-orange/5 blur-3xl rounded-[40px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
 
-                    <div className="relative p-2 lg:p-3 rounded-[30px] border border-white/20 bg-brand-black/60 backdrop-blur-3xl overflow-hidden shadow-[0_0_40px_rgba(0,0,0,0.5)]">
+                    <div className="relative p-4 sm:p-2 lg:p-3 rounded-[30px] border border-white/20 bg-brand-black/60 backdrop-blur-3xl overflow-hidden shadow-[0_0_40px_rgba(0,0,0,0.5)]">
                         {/* Dynamic Glass Shine */}
                         <motion.div
                             style={{
                                 left: useTransform(shineX, [0, 100], ["-50%", "150%"]),
                                 top: useTransform(shineY, [0, 100], ["-50%", "150%"])
                             }}
-                            className="absolute w-[150%] h-[150%] bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.05)_0%,transparent_50%)] pointer-events-none"
+                            className="hidden sm:block absolute w-[150%] h-[150%] bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.05)_0%,transparent_50%)] pointer-events-none"
                         />
                         <AnimatePresence mode="wait">
                             <motion.div
@@ -167,10 +167,10 @@ const Hero = () => {
                                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                                 className="flex flex-col items-center"
                             >
-                                <h2 className="text-5xl lg:text-8xl font-heading font-black text-white italic mb-4 tracking-tightest leading-none mt-2">
+                                <h2 className="text-3xl sm:text-5xl lg:text-8xl font-heading font-black text-white italic mb-4 tracking-tightest leading-none mt-2">
                                     {EFFECTS[currentIndex].quality}
                                 </h2>
-                                <p className="text-xl lg:text-3xl text-white/60 max-w-3xl leading-snug font-light italic px-4">
+                                <p className="text-base sm:text-xl lg:text-3xl text-white/60 max-w-3xl leading-snug font-light italic px-4">
                                     "{EFFECTS[currentIndex].description}"
                                 </p>
                             </motion.div>
@@ -201,12 +201,12 @@ const Hero = () => {
                     </div>
                 </motion.div>
 
-                <div className="hero-line flex flex-col sm:flex-row gap-8 mt-2 pb-20 relative z-40">
+                <div className="hero-line flex flex-col sm:flex-row gap-4 sm:gap-8 mt-4 sm:mt-2 pb-20 relative z-40">
                     <Magnetic>
                         <motion.button
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="px-12 py-6 bg-brand-orange text-white rounded-2xl font-black transition-shadow hover:shadow-[0_20px_60px_rgba(249,79,55,0.4)] text-lg"
+                            className="px-8 py-4 sm:px-12 py-6 bg-brand-orange text-white rounded-2xl font-bold sm:font-black transition-shadow hover:shadow-[0_20px_60px_rgba(249,79,55,0.4)] text-base sm:text-lg w-full sm:w-auto"
                         >
                             Explore Case Studies
                         </motion.button>
@@ -215,7 +215,7 @@ const Hero = () => {
                         <motion.button
                             whileHover={{ backgroundColor: "rgba(255,255,255,0.1)" }}
                             whileTap={{ scale: 0.95 }}
-                            className="px-12 py-6 border border-white/20 text-white rounded-2xl font-bold backdrop-blur-sm text-lg"
+                            className="px-8 py-4 sm:px-12 py-6 border border-white/20 text-white rounded-2xl font-bold backdrop-blur-sm text-base sm:text-lg w-full sm:w-auto"
                         >
                             Start a Project
                         </motion.button>
