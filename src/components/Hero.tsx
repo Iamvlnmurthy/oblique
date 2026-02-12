@@ -136,7 +136,7 @@ const Hero = () => {
                     Digital Marketing Agency + Creative Storytelling
                 </motion.span>
 
-                <h1 className="hero-line text-[clamp(1.6rem,12vw,8.5rem)] font-heading font-bold leading-[0.85] tracking-tightest mb-6 sm:mb-12">
+                <h1 className="hero-line text-[clamp(1.6rem,12vw,8.5rem)] font-heading font-bold leading-[0.85] tracking-tightest mb-6 sm:mb-12 drop-shadow-2xl">
                     Out-think the <br />
                     <span className="text-brand-orange">Algorithm.</span>
                 </h1>
@@ -167,10 +167,10 @@ const Hero = () => {
                                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                                 className="flex flex-col items-center"
                             >
-                                <h2 className="text-2xl sm:text-5xl lg:text-8xl font-heading font-black text-white italic mb-4 tracking-tightest leading-none mt-2">
+                                <h2 className="text-2xl sm:text-5xl lg:text-8xl font-heading font-black text-[#FBF1A9] italic mb-4 tracking-tightest leading-none mt-2 drop-shadow-sm">
                                     {EFFECTS[currentIndex].quality}
                                 </h2>
-                                <p className="text-sm sm:text-lg lg:text-3xl text-white/60 max-w-3xl leading-snug font-light italic px-4">
+                                <p className="text-sm sm:text-lg lg:text-3xl text-white/40 max-w-3xl leading-snug font-light italic px-4">
                                     "{EFFECTS[currentIndex].description}"
                                 </p>
                             </motion.div>
