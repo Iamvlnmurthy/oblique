@@ -84,7 +84,7 @@ const Hero = () => {
         <section
             onMouseMove={handleMouseMove}
             ref={containerRef}
-            className="relative min-h-[140vh] pt-24 sm:pt-40 pb-0 overflow-hidden flex flex-col items-center bg-brand-black"
+            className="relative min-h-[140vh] pt-16 sm:pt-40 pb-0 overflow-hidden flex flex-col items-center bg-brand-black"
         >
             {/* Background Atmosphere */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[100vw] h-[100vh] bg-[radial-gradient(circle_at_center,_rgba(249,79,55,0.08)_0%,_transparent_70%)] pointer-events-none" />
@@ -102,11 +102,11 @@ const Hero = () => {
             </div>
 
             {/* Top Kinetic Marquees Duo (Mission Narrative) */}
-            <div className="absolute top-20 sm:top-24 left-0 w-full opacity-30 pointer-events-none z-0 flex flex-col items-center">
-                <Marquee speed={30} className="text-brand-orange text-3xl sm:text-5xl lg:text-9xl font-heading font-black uppercase tracking-tightest">
+            <div className="absolute top-16 sm:top-24 left-0 w-full opacity-30 pointer-events-none z-0 flex flex-col items-center">
+                <Marquee speed={30} className="text-brand-orange text-2xl sm:text-5xl lg:text-9xl font-heading font-black uppercase tracking-tightest">
                     WE HELP BRANDS GROW WITH CLARITY, CREATIVITY, AND MEASURABLE GROWTH —
                 </Marquee>
-                <Marquee speed={40} direction="right" className="text-white text-3xl sm:text-5xl lg:text-9xl font-heading font-black uppercase tracking-tightest">
+                <Marquee speed={40} direction="right" className="text-white text-2xl sm:text-5xl lg:text-9xl font-heading font-black uppercase tracking-tightest">
                     TRANSFORMING DIGITAL PRESENCE THROUGH MOTION AND STRATEGY —
                 </Marquee>
             </div>
@@ -115,7 +115,7 @@ const Hero = () => {
             <div className="absolute inset-0 pointer-events-none z-10 opacity-[0.03] bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_2px,3px_100%]" />
 
             {/* HUD Corner Accents */}
-            <div className="absolute inset-x-10 inset-y-10 pointer-events-none z-20 opacity-20">
+            <div className="absolute inset-4 sm:inset-10 pointer-events-none z-20 opacity-20">
                 <div className="absolute top-0 left-0 w-12 h-12 border-t-2 border-l-2 border-brand-orange" />
                 <div className="absolute top-0 right-0 w-12 h-12 border-t-2 border-r-2 border-brand-orange" />
                 <div className="absolute bottom-0 left-0 w-12 h-12 border-b-2 border-l-2 border-brand-orange" />
@@ -124,7 +124,7 @@ const Hero = () => {
 
             <motion.div
                 style={{ y, opacity: opacityTransform, scale }}
-                className="container mx-auto px-6 relative z-30 flex flex-col items-center text-center mt-2 sm:mt-4"
+                className="container mx-auto px-6 relative z-30 flex flex-col items-center text-center mt-0 sm:mt-4"
             >
                 {/* Agency Identity Label */}
                 <motion.span
@@ -136,27 +136,27 @@ const Hero = () => {
                     Digital Marketing Agency + Creative Storytelling
                 </motion.span>
 
-                <h1 className="hero-line text-[clamp(2.5rem,10vw,8.5rem)] font-heading font-bold leading-[0.85] tracking-tightest mb-8 sm:mb-12">
+                <h1 className="hero-line text-[clamp(1.6rem,12vw,8.5rem)] font-heading font-bold leading-[0.85] tracking-tightest mb-6 sm:mb-12">
                     Out-think the <br />
                     <span className="text-brand-orange">Algorithm.</span>
                 </h1>
 
-                {/* THE CINEMATIC HUD HIGHLIGHT (Gyroscopic) */}
+                {/* THE CINEMATIC HUD HIGHLIGHT (Gyroscopic & Interactive) */}
                 <motion.div
                     style={{ rotateX, rotateY, perspective: 1000 }}
                     className="relative w-full max-w-5xl group"
                 >
-                    {/* HUD Box Glow */}
-                    <div className="absolute inset-0 bg-brand-orange/5 blur-3xl rounded-[40px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
+                    {/* HUD Box Glow (True Gold) */}
+                    <div className="absolute inset-0 bg-[#D4AF37]/10 blur-3xl rounded-[40px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
 
-                    <div className="relative p-4 sm:p-2 lg:p-3 rounded-[30px] border border-white/20 bg-brand-black/60 backdrop-blur-3xl overflow-hidden shadow-[0_0_40px_rgba(0,0,0,0.5)]">
-                        {/* Dynamic Glass Shine */}
+                    <div className="relative p-8 sm:p-4 lg:p-3 rounded-[30px] border border-[#D4AF37]/30 bg-black/40 backdrop-blur-3xl overflow-hidden shadow-[0_0_60px_rgba(212,175,55,0.15)]">
+                        {/* Dynamic Glass Shine (White Gold) */}
                         <motion.div
                             style={{
                                 left: useTransform(shineX, [0, 100], ["-50%", "150%"]),
                                 top: useTransform(shineY, [0, 100], ["-50%", "150%"])
                             }}
-                            className="hidden sm:block absolute w-[150%] h-[150%] bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.05)_0%,transparent_50%)] pointer-events-none"
+                            className="hidden sm:block absolute w-[150%] h-[150%] bg-[radial-gradient(circle_at_center,rgba(251,241,169,0.15)_0%,transparent_50%)] pointer-events-none"
                         />
                         <AnimatePresence mode="wait">
                             <motion.div
@@ -167,10 +167,10 @@ const Hero = () => {
                                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                                 className="flex flex-col items-center"
                             >
-                                <h2 className="text-3xl sm:text-5xl lg:text-8xl font-heading font-black text-white italic mb-4 tracking-tightest leading-none mt-2">
+                                <h2 className="text-2xl sm:text-5xl lg:text-8xl font-heading font-black text-white italic mb-4 tracking-tightest leading-none mt-2">
                                     {EFFECTS[currentIndex].quality}
                                 </h2>
-                                <p className="text-base sm:text-xl lg:text-3xl text-white/60 max-w-3xl leading-snug font-light italic px-4">
+                                <p className="text-sm sm:text-lg lg:text-3xl text-white/60 max-w-3xl leading-snug font-light italic px-4">
                                     "{EFFECTS[currentIndex].description}"
                                 </p>
                             </motion.div>
@@ -196,7 +196,7 @@ const Hero = () => {
                         <motion.div
                             animate={{ y: ["-100%", "300%"] }}
                             transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-                            className="absolute inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-brand-orange/20 to-transparent pointer-events-none opacity-20"
+                            className="absolute inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-[#D4AF37]/30 to-transparent pointer-events-none opacity-20"
                         />
                     </div>
                 </motion.div>
