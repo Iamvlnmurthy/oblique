@@ -167,7 +167,7 @@ const Hero = () => {
                                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                                 className="flex flex-col items-center"
                             >
-                                <h2 className="text-2xl sm:text-5xl lg:text-8xl font-heading font-black text-[#FBF1A9] italic mb-4 tracking-tightest leading-none mt-2 drop-shadow-sm">
+                                <h2 className="text-xl sm:text-4xl lg:text-7xl font-heading font-black text-white italic mb-4 tracking-tightest leading-none mt-2 drop-shadow-sm">
                                     {EFFECTS[currentIndex].quality}
                                 </h2>
                                 <p className="text-sm sm:text-lg lg:text-3xl text-white/40 max-w-3xl leading-snug font-light italic px-4">
