@@ -144,7 +144,7 @@ const Hero = () => {
                 {/* THE CINEMATIC HUD HIGHLIGHT (Gyroscopic & Interactive) */}
                 <motion.div
                     style={{ rotateX, rotateY, perspective: 1000 }}
-                    className="relative w-full max-w-5xl group"
+                    className="relative w-full max-w-4xl group"
                 >
                     {/* HUD Box Glow (True Gold) */}
                     <div className="absolute inset-0 bg-[#D4AF37]/10 blur-3xl rounded-[40px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
