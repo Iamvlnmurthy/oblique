@@ -84,7 +84,7 @@ const Hero = () => {
         <section
             onMouseMove={handleMouseMove}
             ref={containerRef}
-            className="relative min-h-[140vh] pt-16 sm:pt-40 pb-0 overflow-hidden flex flex-col items-center bg-brand-black"
+            className="relative min-h-[65vh] pt-16 sm:pt-40 pb-0 overflow-hidden flex flex-col items-center bg-brand-black"
         >
             {/* Background Atmosphere */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[100vw] h-[100vh] bg-[radial-gradient(circle_at_center,_rgba(249,79,55,0.08)_0%,_transparent_70%)] pointer-events-none" />
@@ -201,7 +201,7 @@ const Hero = () => {
                     </div>
                 </motion.div>
 
-                <div className="hero-line flex flex-col sm:flex-row gap-4 sm:gap-8 mt-4 sm:mt-2 pb-20 relative z-40">
+                <div className="hero-line flex flex-col sm:flex-row gap-4 sm:gap-8 mt-4 sm:mt-2 pb-10 relative z-40">
                     <Magnetic>
                         <motion.button
                             whileHover={{ scale: 1.05 }}
