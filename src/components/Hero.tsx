@@ -89,37 +89,14 @@ const Hero = () => {
             {/* Background Atmosphere */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[100vw] h-[100vh] bg-[radial-gradient(circle_at_center,_rgba(249,79,55,0.08)_0%,_transparent_70%)] pointer-events-none" />
 
-            {/* HUD Elements */}
-            <div className="absolute inset-0 pointer-events-none z-10 opacity-30">
-                <div className="absolute top-10 left-10 w-20 h-[1px] bg-brand-orange" />
-                <div className="absolute top-10 left-10 w-[1px] h-20 bg-brand-orange" />
-                <div className="absolute top-10 right-10 w-20 h-[1px] bg-brand-orange" />
-                <div className="absolute top-10 right-10 w-[1px] h-20 bg-brand-orange" />
-                <div className="absolute bottom-10 left-10 w-20 h-[1px] bg-brand-orange" />
-                <div className="absolute bottom-10 left-10 w-[1px] h-20 bg-brand-orange" />
-                <div className="absolute bottom-10 right-10 w-20 h-[1px] bg-brand-orange" />
-                <div className="absolute bottom-10 right-10 w-[1px] h-20 bg-brand-orange" />
-            </div>
-
-            {/* Top Kinetic Marquees Duo (Mission Narrative) */}
-            <div className="absolute top-16 sm:top-24 left-0 w-full opacity-30 pointer-events-none z-0 flex flex-col items-center">
+            {/* Top Kinetic Marquees Duo */}
+            <div className="absolute top-16 sm:top-24 left-0 w-full opacity-10 pointer-events-none z-0 flex flex-col items-center">
                 <Marquee speed={30} className="text-brand-orange text-2xl sm:text-5xl lg:text-9xl font-heading font-black uppercase tracking-tightest">
                     WE HELP BRANDS GROW WITH CLARITY, CREATIVITY, AND MEASURABLE GROWTH —
                 </Marquee>
                 <Marquee speed={40} direction="right" className="text-white text-2xl sm:text-5xl lg:text-9xl font-heading font-black uppercase tracking-tightest">
                     TRANSFORMING DIGITAL PRESENCE THROUGH MOTION AND STRATEGY —
                 </Marquee>
-            </div>
-
-            {/* HUD Scanlines Overlay */}
-            <div className="absolute inset-0 pointer-events-none z-10 opacity-[0.03] bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_2px,3px_100%]" />
-
-            {/* HUD Corner Accents */}
-            <div className="absolute inset-4 sm:inset-10 pointer-events-none z-20 opacity-20">
-                <div className="absolute top-0 left-0 w-12 h-12 border-t-2 border-l-2 border-brand-orange" />
-                <div className="absolute top-0 right-0 w-12 h-12 border-t-2 border-r-2 border-brand-orange" />
-                <div className="absolute bottom-0 left-0 w-12 h-12 border-b-2 border-l-2 border-brand-orange" />
-                <div className="absolute bottom-0 right-0 w-12 h-12 border-b-2 border-r-2 border-brand-orange" />
             </div>
 
             <motion.div
@@ -131,77 +108,88 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.5 }}
-                    className="text-brand-orange text-[10px] sm:text-xs font-bold uppercase tracking-[0.5em] mb-4 sm:mb-8 hero-line bg-brand-black/50 backdrop-blur-sm px-6 py-2 rounded-full border border-brand-orange/20"
+                    className="text-brand-orange text-[10px] sm:text-xs font-bold uppercase tracking-[0.5em] mb-4 sm:mb-8 bg-brand-black/50 backdrop-blur-sm px-6 py-2 rounded-full border border-brand-orange/20"
                 >
                     Digital Marketing Agency + Creative Storytelling
                 </motion.span>
 
-                <h1 className="hero-line text-[clamp(1.6rem,12vw,8.5rem)] font-heading font-bold leading-[0.85] tracking-tightest mb-6 sm:mb-12 drop-shadow-2xl">
+                <h1 className="text-[clamp(1.6rem,12vw,6.5rem)] font-heading font-bold leading-[0.85] tracking-tightest mb-6 sm:mb-20 drop-shadow-2xl">
                     Out-think the <br />
                     <span className="text-brand-orange">Algorithm.</span>
                 </h1>
 
-                {/* THE CINEMATIC HUD HIGHLIGHT (Gyroscopic & Interactive) */}
-                <motion.div
-                    style={{ rotateX, rotateY, perspective: 1000 }}
-                    className="relative w-full max-w-4xl group"
-                >
-                    {/* HUD Box Glow (True Gold) */}
-                    <div className="absolute inset-0 bg-[#D4AF37]/10 blur-3xl rounded-[40px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
+                {/* THE CINEMATIC RECTANGULAR PRISM (Refined) */}
+                <div className="relative w-full h-[220px] sm:h-[280px] perspective-[2500px] flex items-center justify-center -mt-6 sm:-mt-12 group">
+                    <motion.div
+                        animate={{
+                            rotateY: currentIndex === 0 ? 0 : currentIndex === 1 ? -90 : currentIndex === 2 ? -180 : currentIndex === 3 ? 90 : 0,
+                            rotateX: currentIndex === 4 ? -90 : 0
+                        }}
+                        transition={{
+                            duration: 1.2,
+                            ease: [0.16, 1, 0.3, 1]
+                        }}
+                        className="relative w-[300px] h-[180px] sm:w-[500px] sm:h-[180px] preserve-3d"
+                    >
+                        {/* Define all 6 faces of the prism */}
+                        {[0, 1, 2, 3, 4, 5].map((i) => {
+                            const effect = EFFECTS[i] || { quality: "OBLIQUE", description: "Mechanical Resonance" };
 
-                    <div className="relative p-8 sm:p-4 lg:p-3 rounded-[30px] border border-[#D4AF37]/30 bg-black/40 backdrop-blur-3xl overflow-hidden shadow-[0_0_60px_rgba(212,175,55,0.15)]">
-                        {/* Dynamic Glass Shine (White Gold) */}
-                        <motion.div
-                            style={{
-                                left: useTransform(shineX, [0, 100], ["-50%", "150%"]),
-                                top: useTransform(shineY, [0, 100], ["-50%", "150%"])
-                            }}
-                            className="hidden sm:block absolute w-[150%] h-[150%] bg-[radial-gradient(circle_at_center,rgba(251,241,169,0.15)_0%,transparent_50%)] pointer-events-none"
-                        />
-                        <AnimatePresence mode="wait">
-                            <motion.div
-                                key={currentIndex}
-                                initial={{ opacity: 0, filter: "blur(20px)", scale: 0.95 }}
-                                animate={{ opacity: 1, filter: "blur(0px)", scale: 1 }}
-                                exit={{ opacity: 0, filter: "blur(20px)", scale: 1.05 }}
-                                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                                className="flex flex-col items-center"
-                            >
-                                <h2 className="text-xl sm:text-4xl lg:text-7xl font-heading font-black text-white italic mb-4 tracking-tightest leading-none mt-2 drop-shadow-sm">
-                                    {EFFECTS[currentIndex].quality}
-                                </h2>
-                                <p className="text-sm sm:text-lg lg:text-3xl text-white/40 max-w-3xl leading-snug font-light italic px-4">
-                                    "{EFFECTS[currentIndex].description}"
-                                </p>
-                            </motion.div>
-                        </AnimatePresence>
+                            const rotations = [
+                                "rotateY(0deg)",    // Front
+                                "rotateY(90deg)",   // Right
+                                "rotateY(180deg)",  // Back
+                                "rotateY(-90deg)",  // Left
+                                "rotateX(90deg)",   // Top
+                                "rotateX(-90deg)"   // Bottom
+                            ];
 
-                        {/* HUD Navigation Indicator */}
-                        <div className="flex gap-4 mt-4 justify-center">
-                            {EFFECTS.map((_, i) => (
-                                <motion.div
+                            const isVerticalFace = i === 4 || i === 5;
+
+                            return (
+                                <div
                                     key={i}
-                                    onClick={() => setCurrentIndex(i)}
-                                    className="cursor-pointer group/dot relative p-2"
+                                    style={{
+                                        transform: `${rotations[i]} translateZ(var(--prism-depth, 250px))`,
+                                    }}
+                                    className={`absolute inset-0 preserve-3d backface-hidden transition-all duration-700
+                                        ${i === currentIndex ? 'opacity-100' : 'opacity-20 blur-[1px]'}
+                                        [--prism-depth:150px] sm:[--prism-depth:250px]
+                                        ${isVerticalFace ? '[--prism-depth:60px] sm:[--prism-depth:90px]' : ''}
+                                    `}
+                                    onClick={() => i < 5 && setCurrentIndex(i)}
                                 >
-                                    <div className={`w-1.5 h-1.5 rounded-full transition-all duration-500 ${i === currentIndex ? 'bg-brand-orange scale-150' : 'bg-white/20 group-hover/dot:bg-white/40'}`} />
-                                    {i === currentIndex && (
-                                        <motion.div layoutId="hud-dot" className="absolute inset-0 border border-brand-orange/40 rounded-full" />
-                                    )}
-                                </motion.div>
-                            ))}
-                        </div>
+                                    {/* Clean Glass Face with Enhanced Internal Glow */}
+                                    <div className="absolute inset-0 bg-black/60 backdrop-blur-3xl border border-white/10 rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(249,79,55,0.05)]">
+                                        {/* Internal Face Glow */}
+                                        <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-brand-orange/40 to-transparent" />
+                                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(249,79,55,0.08)_0%,transparent_70%)]" />
 
-                        {/* Scanner Line Effect */}
-                        <motion.div
-                            animate={{ y: ["-100%", "300%"] }}
-                            transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-                            className="absolute inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-[#D4AF37]/30 to-transparent pointer-events-none opacity-20"
-                        />
-                    </div>
-                </motion.div>
+                                        {/* Content Layer */}
+                                        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-8 py-2 sm:py-4 z-10">
+                                            <h2 className="text-2xl sm:text-4xl lg:text-6xl font-heading font-black text-white italic tracking-tightest leading-none mb-3 select-none">
+                                                {effect.quality}
+                                            </h2>
+                                            <p className="text-[10px] sm:text-xs lg:text-base text-white/60 max-w-[85%] leading-snug font-light italic select-none px-4">
+                                                "{effect.description}"
+                                            </p>
+                                        </div>
+                                    </div>
 
-                <div className="hero-line flex flex-col sm:flex-row gap-4 sm:gap-8 mt-4 sm:mt-2 pb-10 relative z-40">
+                                    {/* Face Outer Edge Burnish */}
+                                    <div className="absolute inset-0 border-2 border-brand-orange/20 rounded-2xl pointer-events-none shadow-[inset_0_0_40px_rgba(249,79,55,0.15),0_0_40px_rgba(249,79,55,0.1)]" />
+                                </div>
+                            );
+                        })}
+                    </motion.div>
+
+                    {/* Volumetric Atmosphere (Amplified) */}
+                    <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-80 w-full bg-gradient-to-r from-transparent via-brand-orange/15 to-transparent blur-[160px] pointer-events-none opacity-60" />
+                    <div className="absolute w-[600px] h-[400px] bg-brand-orange/10 blur-[120px] rounded-full pointer-events-none -z-10" />
+                </div>
+
+                {/* CTA Buttons */}
+                <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 mt-8 sm:mt-12 pb-12 relative z-40">
                     <Magnetic>
                         <motion.button
                             whileHover={{ scale: 1.05 }}
@@ -223,7 +211,7 @@ const Hero = () => {
                 </div>
             </motion.div>
 
-            {/* NEW: Cinematic Motion Graphic Background (Refined) */}
+            {/* Dynamic Background Elements */}
             <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden bg-brand-black opacity-40">
                 <motion.div
                     animate={{ x: [-200, 200, -200], y: [-100, 100, -100], scale: [1, 1.2, 1] }}
@@ -235,10 +223,6 @@ const Hero = () => {
                     transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
                     className="absolute bottom-0 right-0 w-[70vw] h-[70vh] bg-brand-orange/5 blur-[120px] rounded-full opacity-20"
                 />
-                <div className="absolute inset-0 bg-[linear-gradient(rgba(249,79,55,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(249,79,55,0.05)_1px,transparent_1px)] bg-[size:150px_150px] [mask-image:radial-gradient(ellipse_at_center,black,transparent:90%)]" />
-                <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px] opacity-40" />
-                <div className="absolute inset-0 opacity-[0.05] mix-blend-overlay pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,_rgba(0,0,0,0.6)_100%)]" />
             </div>
 
             {/* Scroll Indicator */}
